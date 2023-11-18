@@ -18,7 +18,8 @@ export const TextInput = (props) => {
     return (
         <div className='flex flex-row gap-2 w-full h-10'>
           <input 
-            className='w-full h-full focus:outline-none p-2 rounded-xl' 
+            className='w-full h-full focus:outline-none p-2 rounded-xl'
+            value={inputValue}
             onChange={onChangeHandler}
           />
           <button 

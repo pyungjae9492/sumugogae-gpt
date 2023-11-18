@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { TextInput } from './components/TextInput'
+import { Message } from './components/Message';
 
 function App() {
   const [messageList, setMessageList] = useState([
@@ -19,15 +20,9 @@ function App() {
       <div className='max-w-[500px] h-full w-full flex flex-col justify-center items-center bg-slate-200 py-10 px-5 gap-4'>
         <div className='w-full h-full bg-white rounded-xl p-10 flex flex-col gap-2'>
           {messageList.map((message, index) => {
-
             const isBot = message.role === 'assistant'
-
             return (
-              <div key={message + index} className={`flex w-full ${isBot ? "justify-start" : "justify-end"}`}>
-                <div className={`max-w-[80%] rounded-xl flex items-center px-4 py-2 ${isBot ? "bg-slate-500 text-white" : "bg-slate-200 text-black"}`}>
-                  {message.content}
-                </div>
-              </div>
+              <Message key={index} isBot={isBot} message={message} />
             )
           })}
         </div>
