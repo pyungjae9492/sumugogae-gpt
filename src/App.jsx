@@ -18,13 +18,13 @@ function App() {
     <div className='w-screen h-screen flex justify-center'>
       <div className='max-w-[500px] h-full w-full flex flex-col justify-center items-center bg-slate-200 py-10 px-5 gap-4'>
         <div className='w-full h-full bg-white rounded-xl p-10 flex flex-col gap-2'>
-          {messageList.map((message) => {
+          {messageList.map((message, index) => {
 
             const isBot = message.role === 'assistant'
 
             return (
-              <div className={`flex w-full ${isBot ? "justify-start" : "justify-end"}`}>
-                <div className={`max-w-[80%] rounded-xl text-white flex items-center px-4 py-2 ${isBot ? "bg-slate-500" : "bg-slate-300"}`}>
+              <div key={message + index} className={`flex w-full ${isBot ? "justify-start" : "justify-end"}`}>
+                <div className={`max-w-[80%] rounded-xl flex items-center px-4 py-2 ${isBot ? "bg-slate-500 text-white" : "bg-slate-200 text-black"}`}>
                   {message.content}
                 </div>
               </div>
