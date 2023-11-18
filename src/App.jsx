@@ -54,7 +54,7 @@ function App() {
   }
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "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",
     dangerouslyAllowBrowser: true
   });
   
